@@ -1,0 +1,12 @@
+(executable
+  (name server)
+  (libraries opium)
+)
+
+(env
+ (static
+  (flags
+   (:standard -ccopt -static)
+  )
+ )
+)
