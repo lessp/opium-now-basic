@@ -4,7 +4,7 @@ let auth_header =
   post("/auth", req => {
     let result =
       switch (Cohttp.Header.get(req |> Request.headers, "Authorization")) {
-      | Some(a) => a
+      | Some(auth) => auth
       | None => "None"
       };
 
@@ -22,8 +22,8 @@ let hello_world =
 let json_response =
   get("/json", _req => {
     let json =
-      Ezjsonm.(
-        dict([("name", string("Elizabeth")), ("height", int(163))])
+      `Assoc(
+        ([("name", `String("Elizabeth")), ("height", `Int(163))])
       );
 
     `Json(json) |> respond';

@@ -1,19 +1,22 @@
 {
   "name": "opium-now",
   "scripts": {
-    "build": "esy b dune build src/server.exe",
-    "server": "esy b dune exec src/server.exe"
+    "build": "esy refmterr dune build",
+    "server": "esy refmterr dune exec src/server.exe"
   },
   "dependencies": {
     "@opam/conf-openssl": "*",
-    "@opam/dune": "*",
+    "@opam/dune": "1.11.3",
     "@opam/opium": "*",
-    "@opam/reason": "*",
-    "ocaml": "*"
+    "@opam/opium_core": "*",
+    "@opam/reason": "3.5.0",
+    "ocaml": "~4.7.1000",
+    "refmterr": "^3.2.2"
   },
   "devDependencies": { "@opam/merlin": "*" },
   "resolutions": {
-    "@opam/opium": "rgrinberg/opium:opium.opam#9f26c2",
+    "@opam/opium": "rgrinberg/opium:opium.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090",
+    "@opam/opium_core": "rgrinberg/opium:opium_core.opam#287b83f85bcf6c75d503b1edab77c7ec524f9090",
     "@opam/conf-openssl": {
       "source": "no-source:",
       "override": {
@@ -25,3 +28,4 @@
     }
   }
 }
+
